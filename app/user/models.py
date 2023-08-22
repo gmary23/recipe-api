@@ -24,6 +24,7 @@ class UserManager(BaseUserManager): # responsável para administrar os usuários
         user.is_superuser = True
         user.save(using=self._db)
 
+
         return user
 
 class User(AbstractBaseUser, PermissionsMixin): # herda as propriedade da class # PermissionsMixin --> configura as permissões dos usuários
