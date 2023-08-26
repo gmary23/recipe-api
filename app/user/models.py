@@ -31,8 +31,8 @@ class User(AbstractBaseUser, PermissionsMixin): # herda as propriedade da class 
     """User in the system."""
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
-    is_active = models.BooleanField(default=True) # estará ativado de imediato
-    is_staff = models.BooleanField(default=False) # estará inativo
+    is_active = models.BooleanField(default=True) # controla se uma conta de usuário está ativa ou inativa (o True - ele está ativo de imediato)
+    is_staff = models.BooleanField(default=False) # nível de privilégio ou acesso especial dentro do sistema (o False indica que está inativo)
 
     objects = UserManager()
 
