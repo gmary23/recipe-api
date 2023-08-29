@@ -17,7 +17,7 @@ class UserManager(BaseUserManager): # responsável para administrar os usuários
 
         return user
 
-    def create_superuser(self, email, password):
+    def create_superuser(self, email, password): 
         """Create and return a new superuser."""
         user = self.create_user(email, password)
         user.is_staff = True # permissão 
@@ -29,7 +29,7 @@ class UserManager(BaseUserManager): # responsável para administrar os usuários
 
 class User(AbstractBaseUser, PermissionsMixin): # herda as propriedade da class # PermissionsMixin --> configura as permissões dos usuários
     """User in the system."""
-    email = models.EmailField(max_length=255, unique=True)
+    email = models.EmailField(max_length=255, unique=True) # identicador único
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True) # controla se uma conta de usuário está ativa ou inativa (o True - ele está ativo de imediato)
     is_staff = models.BooleanField(default=False) # nível de privilégio ou acesso especial dentro do sistema (o False indica que está inativo)
